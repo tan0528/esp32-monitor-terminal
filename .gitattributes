@@ -1,0 +1,13 @@
+# Normalise line endings so the repository stays LF regardless of the OS that
+# clones it. Without this, Windows checkouts produce CRLF noise in every diff.
+* text=auto eol=lf
+
+# Binary assets must not be line-ending converted.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.docx binary
+*.bin binary
+*.elf binary

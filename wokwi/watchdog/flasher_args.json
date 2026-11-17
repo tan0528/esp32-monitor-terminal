@@ -1,0 +1,9 @@
+{
+  "flash_settings": { "flash_size": "4MB" },
+  "flash_files": {
+    "0x1000": "../../.pio/build/esp32dev_watchdog_test/bootloader.bin",
+    "0x8000": "../../.pio/build/esp32dev_watchdog_test/partitions.bin",
+    "0x10000": "../../.pio/build/esp32dev_watchdog_test/firmware.bin",
+    "0x390000": "../../.pio/build/esp32dev_watchdog_test/littlefs.bin"
+  }
+}

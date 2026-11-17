@@ -1,0 +1,24 @@
+name: Host tests
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  host-tests:
+    name: State machine, DSP and ring buffer tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # The tests compile monitor_model.cpp, cache_ring.h and the vibration
+      # backends against plain C++11 with no Arduino headers, so no ESP32
+      # toolchain is needed on the runner.
+      - name: Build and run host tests
+        run: python test/run_tests.py

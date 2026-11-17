@@ -1,0 +1,3 @@
+# Only needed by test/watchdog_smoke.py (serial / RFC2217 console tests).
+# The host unit tests in test/run_tests.py use the standard library only.
+pyserial>=3.5

@@ -1,0 +1,29 @@
+# PlatformIO build output
+.pio/
+build/
+
+# Real credentials — never commit this file
+include/secrets.h
+
+# VS Code auto-generated files (extensions.json is kept on purpose)
+.vscode/c_cpp_properties.json
+.vscode/c_cpp_properties.json.bak
+.vscode/launch.json
+.vscode/ipch/
+.vscode/.browse.c_cpp.db*
+
+# Generated documents and personal notes
+output/
+*.docx
+
+# Tool scratch directories
+.archify/
+.workbuddy/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS noise
+.DS_Store
+Thumbs.db

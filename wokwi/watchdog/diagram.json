@@ -1,0 +1,94 @@
+
+{
+  "version": 1,
+  "author": "Lucas",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": 20,
+      "left": 245,
+      "attrs": { "temperature": "24", "humidity": "40" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot1",
+      "top": 20,
+      "left": -165,
+      "attrs": { "value": "0" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "alarmLed",
+      "top": 155,
+      "left": 235,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "ledResistor",
+      "top": 220,
+      "left": 140,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "alarmBuzzer",
+      "top": 155,
+      "left": -165,
+      "attrs": { "volume": "0.2" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "modeButton",
+      "top": 300,
+      "left": -155,
+      "attrs": { "color": "yellow", "label": "Mode (M)", "key": "M" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "networkButton",
+      "top": 300,
+      "left": -45,
+      "attrs": { "color": "blue", "label": "Network (N)", "key": "N" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "resetButton",
+      "top": 300,
+      "left": 65,
+      "attrs": { "color": "green", "label": "Reset (R)", "key": "R" }
+    }
+  ],
+  "connections": [
+    ["esp:3V3", "dht1:VCC", "red", []],
+    ["esp:4", "dht1:SDA", "green", []],
+    ["esp:GND.1", "dht1:GND", "black", []],
+
+    ["esp:3V3", "pot1:VCC", "red", []],
+    ["esp:34", "pot1:SIG", "green", []],
+    ["esp:GND.1", "pot1:GND", "black", []],
+
+    ["esp:2", "ledResistor:1", "orange", []],
+    ["ledResistor:2", "alarmLed:A", "orange", []],
+    ["esp:GND.1", "alarmLed:C", "black", []],
+    ["esp:25", "alarmBuzzer:2", "orange", []],
+    ["esp:GND.1", "alarmBuzzer:1", "black", []],
+
+    ["esp:26", "modeButton:1.l", "yellow", []],
+    ["esp:GND.1", "modeButton:2.l", "black", []],
+    ["esp:27", "networkButton:1.l", "blue", []],
+    ["esp:GND.1", "networkButton:2.l", "black", []],
+    ["esp:33", "resetButton:1.l", "purple", []],
+    ["esp:GND.1", "resetButton:2.l", "black", []]
+  ],
+  "dependencies": {}
+}

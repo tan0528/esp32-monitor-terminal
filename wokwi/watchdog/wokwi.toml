@@ -1,0 +1,5 @@
+[wokwi]
+version = 1
+firmware = 'flasher_args.json'
+elf = '../../.pio/build/esp32dev_watchdog_test/firmware.elf'
+rfc2217ServerPort = 4000
